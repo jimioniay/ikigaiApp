@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "Vy5Z6tdpnY",
+    "password": "sBeIKLTJItnoK1050uDY",
+    "database": "ikigaitestdb",
+    "host": "ikigaitestdb.certeyswy6xn.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
