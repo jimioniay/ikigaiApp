@@ -49,6 +49,7 @@ const updateWebhookTransaction = async body => {
           flwReference: body.flwRef,
           paymentType: getpaymentType(body['event.type']),
           source: 'webhook',
+          chargedAmount: body.charged_amount,
         },
         { where: { id: body.txRef.split('@')[0] } },
       );
