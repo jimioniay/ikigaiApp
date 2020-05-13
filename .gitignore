@@ -1,4 +1,4 @@
 */node_modules/*
-*/.env
-*/.env
+.git/client/.env
+.git/server/.env
 
