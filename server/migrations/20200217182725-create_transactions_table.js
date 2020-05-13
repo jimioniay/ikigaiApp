@@ -61,6 +61,14 @@ module.exports = {
         type: Sequelize.STRING(100),
         allowNull: true,
       },
+      ip: {
+        type: Sequelize.STRING(100),
+        allowNull: true,
+      },
+      officeRedirectUrl: {
+        type: Sequelize.STRING(100),
+        allowNull: true,
+      },
       status: {
         type: Sequelize.ENUM,
         allowNull: false,

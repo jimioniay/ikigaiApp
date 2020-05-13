@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
-import database from '../database';
+import connection from '../database';
 
-const webhooks = database.define('webhooks', {
+const webhooks = connection.define('webhooks', {
   id: {
     type: Sequelize.INTEGER(100),
     autoIncrement: true,

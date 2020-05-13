@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
-import database from '../database';
+import connection from '../database';
 
-const ReqRespSignatures = database.define('ReqRespSignatures', {
+const ReqRespSignatures = connection.define('ReqRespSignatures', {
   id: {
     type: Sequelize.INTEGER(100),
     autoIncrement: true,

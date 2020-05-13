@@ -33,6 +33,7 @@ const checkSignature = async (
     }
   } catch (error) {
     next(error);
+    // throw new ErrorHandler(500, 'SIGN_VALIDATE', 'An error occured', error);
   }
 };
 

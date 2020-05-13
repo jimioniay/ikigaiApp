@@ -1,0 +1,14 @@
+#root > section > main > div > div > span.anticon.anticon-check > svg {
+  height: 10em;
+  width: 10em;
+}
+
+#root > section > main > div > div > span.anticon.anticon-warning > svg {
+  height: 10em;
+  width: 10em;
+}
+
+div > span.anticon.anticon-sync > svg {
+  height: 10em;
+  width: 10em;
+}

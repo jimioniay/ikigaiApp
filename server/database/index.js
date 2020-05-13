@@ -8,11 +8,11 @@ const options = {
   dialectModule: mysql2,
 };
 
-const sequelize = new Sequelize(
+const connection = new Sequelize(
   process.env.DATABASE_NAME,
   process.env.DATABASE_USER,
   process.env.DATABASE_PASS,
   options,
 );
 
-export default sequelize;
+export default connection;

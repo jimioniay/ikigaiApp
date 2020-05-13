@@ -17,12 +17,14 @@ const handleTokenResponse = ({ status, error, data }) => {
   }
 };
 
-const generateToken = ({ amount, reference, transactionId }) => {
+const generateToken = ({ amount, reference, transactionId, redirectUrl }) => {
+  console.log('redirectUrl --> ', redirectUrl);
   return jwt.sign(
     {
       amount,
       reference,
       transactionId,
+      redirectUrl,
     },
     process.env.JWT_SEC_KEY,
     {

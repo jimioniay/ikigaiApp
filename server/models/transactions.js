@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
-import database from '../database';
+import connection from '../database';
 
-const transactions = database.define('transactions', {
+const transactions = connection.define('transactions', {
   id: {
     type: Sequelize.INTEGER(100),
     autoIncrement: true,
@@ -69,6 +69,14 @@ const transactions = database.define('transactions', {
     type: Sequelize.STRING(100),
     allowNull: true,
     values: ['webhook', 'verify'],
+  },
+  ip: { 
+    type: Sequelize.STRING(100), 
+    allowNull: true 
+  },
+  officeRedirectUrl: { 
+    type: Sequelize.STRING(100), 
+    allowNull: true 
   },
   responseCode: {
     type: Sequelize.STRING(100),

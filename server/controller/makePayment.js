@@ -1,10 +1,9 @@
-import { rave, ErrorLogger, ErrorHandler } from '../utils';
-import { RAVE_PAY_FAIL } from '../utils/constants';
+import { rave } from '../utils';
 
-const makePayment = async ({ body }, res, next) => {
+const makePayment = async (req, res, next) => {
   const { ravePay } = rave;
   try {
-    const resp = await ravePay(body);
+    const resp = await ravePay(req.body);
     res.json({
       status: true,
       message: 'Successful',

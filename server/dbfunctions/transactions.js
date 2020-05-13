@@ -16,6 +16,7 @@ const createSignature = async data => {
     });
   } catch (error) {
     ErrorLogger(DB_LOG_FAIL, error);
+    return error.errorno;
   }
 };
 
@@ -40,6 +41,8 @@ const createTransaction = async ({
   customer_firstname,
   customer_lastname,
   customer_email,
+  redirectUrl, // this officeRnD redirectUrl and its different from the redirect_url for Rave
+  ip,
 }) => {
   try {
     return await Transactions.create({
@@ -50,6 +53,8 @@ const createTransaction = async ({
       customerFirstName: customer_firstname,
       customerLastName: customer_lastname,
       customerEmail: customer_email,
+      ip,
+      officeRedirectUrl: redirectUrl,
       status: 'initiated',
     });
   } catch (error) {

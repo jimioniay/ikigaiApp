@@ -34,7 +34,6 @@ const raveVerify = async data => {
       },
     });
   } catch (error) {
-    console.log('===> ', error);
     throw new ErrorHandler(
       500,
       RAVE_VERIFY_FAIL,

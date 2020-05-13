@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "label": "Transaction ID",
+    "name": "tId",
+    "rules": [
+      {
+        "required": true,
+        "message": "Please input Transction ID"
+      }
+    ],
+    "size": "large",
+    "className": "input",
+    "placeholder": "Transaction ID",
+    "type": "text",
+    "defaultValue": "6f47c19b-eb9d-4ee5-a144-19f7b9263183"
+  },
+  {
+    "id": "2",
+    "label": "Invoice Number",
+    "name": "ref",
+    "rules": [
+      {
+        "required": true,
+        "message": "Please input Invoice ID"
+      }
+    ],
+    "size": "large",
+    "className": "input",
+    "placeholder": "Invoice ID",
+    "type": "text",
+    "defaultValue": "INV-001"
+  },
+  {
+    "id": "3",
+    "label": "Amount(KES)",
+    "name": "amount",
+    "rules": [
+      {
+        "required": true,
+        "message": "Please input amount"
+      }
+    ],
+    "size": "large",
+    "className": "input",
+    "placeholder": "Amount",
+    "type": "number",
+    "defaultValue": 12.34
+  }
+]

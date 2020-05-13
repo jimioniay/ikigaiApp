@@ -54,7 +54,14 @@ const updateWebhookTransaction = async body => {
         { where: { id: body.txRef.split('@')[0] } },
       );
     } else {
-      console.log(response.id, '==> ', response.status, '||', body.status);
+      console.log(
+        'hook came, but already updated',
+        response.id,
+        '==> ',
+        response.status,
+        '||',
+        body.status,
+      );
     }
   } catch (error) {
     throw new ErrorHandler(500, WEBHOOK_UPDATE, 'An error occured', error);
