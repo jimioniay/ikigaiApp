@@ -21,6 +21,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+console.log('got here', process.env.REACT_APP_ENV);
 
 app.use('/api/v1/redirect', redirect);
 app.use('/api/v1/transaction', transaction);
@@ -28,7 +29,6 @@ app.get('/error', () => {
   throw new ErrorHandler(400, ERROR_ROUTE, 'Invalid Route', ERROR_ROUTE);
 });
 if (process.env.NODE_ENV === 'production') {
-  console.log('got here');
   app.use(express.static('client/build'));
 
   app.get('*', (req, res) => {

@@ -15,7 +15,7 @@ import {
 } from './constants';
 
 const errorLogger = (SERVER_EXCEPTION, error) => {
-  console.log(`Exception caught in ${SERVER_EXCEPTION}: `, error);
+  console.log(`Exception caught in ${SERVER_EXCEPTION} || ??? : `, error);
 };
 
 const dbLogger = (operation, message) => {

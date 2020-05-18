@@ -11,6 +11,9 @@ import InputFieldData from './input.json';
 import input from './input.json';
 
 const Home = ({ history: { push } }) => {
+  console.log('react counter ---> ', process.env.REACT_APP_REDIRECT_COUNTER);
+  console.log('node counter ---> ', process.env.REDIRECT_COUNTER);
+
   const [form, setForm] = useState({
     tId: '',
     ref: '',
