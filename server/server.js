@@ -52,6 +52,7 @@ connection
 
 try {
   app.listen(PORT, () => console.log(`Server started on port ${PORT} ...`));
+  console.log('Enviromental Variables --> ', process.env);
 } catch (error) {
   ErrorLogger(SERVER_EXCEPTION, error);
 }
