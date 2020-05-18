@@ -17,16 +17,13 @@ const Counter = ({ txref, history: { push } }) => {
     if (counter > 0) {
       setTimeout(() => setCounter(counter - 1), 1000);
     } else {
-      console.log('Count down done!');
       fetchOfficeRnDURL();
     }
   }, [counter]);
 
   const fetchOfficeRnDURL = async () => {
     const response = await officeRnDURL(txref);
-    console.log(response);
     if (response.status) {
-      console.log('got here');
       response.data.url.includes('127.0.0.1')
         ? push('/officeRnD')
         : window.location.assign(response.data.url);

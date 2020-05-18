@@ -27,7 +27,13 @@ app.use('/api/v1/transaction', transaction);
 app.get('/error', () => {
   throw new ErrorHandler(400, ERROR_ROUTE, 'Invalid Route', ERROR_ROUTE);
 });
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve('client', 'build', 'index.html'));
+  });
+}
 const PORT = process.env.PORT || process.env.DEV_SERVER_PORT;
 
 app.use((error, req, res, next) => {

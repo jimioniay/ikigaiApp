@@ -20,7 +20,6 @@ const getQueryParams = async path => {
         [values[i].key]: values[i].value,
       };
     }
-    console.log(response);
     return response;
   } catch (error) {
     return {

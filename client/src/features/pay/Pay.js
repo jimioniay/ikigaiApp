@@ -19,7 +19,6 @@ const {
 } = util;
 
 const Pay = ({ history: { push }, location: { search } }) => {
-  console.log('window.location.hostname ---> ', window.location.origin);
   const [data, setData] = useState({
     transactionId: '',
     amount: '',

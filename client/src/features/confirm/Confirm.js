@@ -30,7 +30,6 @@ const Confirm = ({
 
   const confirm = async txref => {
     const response = await confirmPayment(txref);
-    console.log(response);
     if (response.status) {
       setState({
         ...state,
@@ -39,7 +38,6 @@ const Confirm = ({
         data: response.data.data,
       });
     } else {
-      console.log('here????');
       setState({
         status: false,
         loading: false,

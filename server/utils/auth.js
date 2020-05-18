@@ -18,7 +18,6 @@ const handleTokenResponse = ({ status, error, data }) => {
 };
 
 const generateToken = ({ amount, reference, transactionId, redirectUrl }) => {
-  console.log('redirectUrl --> ', redirectUrl);
   return jwt.sign(
     {
       amount,
