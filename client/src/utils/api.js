@@ -32,17 +32,14 @@ const generatePaymentURL = async (data, form) => {
     amount: data.amount,
     redirectUrl: data.redirectUrl,
     customer_email: form.email,
-    redirect_url: 'http://localhost:4009/api/v1/redirect/flutterwave',
+    redirect_url:
+      process.env.REACT_APP_ENV === 'local'
+        ? 'http://localhost:4009/api/v1/redirect/flutterwave'
+        : `${window.location.origin}/api/v1/redirect/flutterwave`,
     custom_title: 'Ikigai Payment',
     customer_firstname: form.firstName,
     customer_lastname: form.lastName,
     custom_description: 'Ikigai Membership Payment',
-    meta: [
-      {
-        metaname: 'Product Name',
-        metavalue: form.productName,
-      },
-    ],
     ip: data.ip,
   };
   try {

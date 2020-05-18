@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { CheckOutlined, WarningOutlined } from '@ant-design/icons';
 
 import Counter from './Counter';

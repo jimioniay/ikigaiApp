@@ -8,7 +8,6 @@ const getQueryParams = async path => {
   };
   try {
     let regex = /[?&]([^=#]+)=([^&#]*)/g,
-      params = {},
       match = [];
     let values = [];
     for (let i = 0; i < 5; i++) {

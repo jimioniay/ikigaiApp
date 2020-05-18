@@ -19,6 +19,7 @@ const {
 } = util;
 
 const Pay = ({ history: { push }, location: { search } }) => {
+  console.log('window.location.hostname ---> ', window.location.origin);
   const [data, setData] = useState({
     transactionId: '',
     amount: '',
@@ -61,7 +62,6 @@ const Pay = ({ history: { push }, location: { search } }) => {
   };
 
   const submitQueryParams = async data => {
-    console.log('data--> ', data);
     setSpinner(false);
     try {
       const response = await initiatePayment(data);
@@ -108,7 +108,8 @@ const Pay = ({ history: { push }, location: { search } }) => {
             placeholder={field.placeholder}
             type={field.type}
             disabled={field.id === '5' ? true : false}
-            value={form[field.name]}
+            value={field.id === '5' ? data.amount : form[field.name]}
+            defaultValue={field.id === '5' && data.amount}
             setValue={value =>
               setForm({
                 ...form,

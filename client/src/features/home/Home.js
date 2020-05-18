@@ -8,7 +8,6 @@ import Button from '../../components/button';
 
 import { level, text } from './title.json';
 import InputFieldData from './input.json';
-import { SecurityScanTwoTone } from '@ant-design/icons';
 import input from './input.json';
 
 const Home = ({ history: { push } }) => {
@@ -19,8 +18,8 @@ const Home = ({ history: { push } }) => {
     signature:
       '617b0b7d29e57db460208904f0e64c11092872d86faf581598c3ba9b8b0e00ae',
   });
-  let obj = {};
   useEffect(() => {
+    let obj = {};
     for (let i = 0; i < input.length; i++) {
       obj = {
         ...obj,
@@ -32,7 +31,6 @@ const Home = ({ history: { push } }) => {
       ...obj,
     });
   }, [input]);
-  const [spinner, setSpinner] = useState(false);
   const handleChange = event => {
     const { name, value, checked, type } = event.target;
     setForm({
@@ -82,9 +80,8 @@ const Home = ({ history: { push } }) => {
     );
   };
 
-  const handleSetValue = field => form[field];
   return (
-    <Container spinner={spinner}>
+    <Container>
       <Fragment>
         <div className="container">
           <div className="flex justify-content-center">
@@ -93,9 +90,7 @@ const Home = ({ history: { push } }) => {
           <Form onFinish={onFinish} onFinishFailed={onFinishFailed}>
             {displayInputFields()}
             <div className="flex justify-content-center">
-              <Button onClick={handleClick} disabled={spinner}>
-                Submit Office RnD
-              </Button>
+              <Button onClick={handleClick}>Submit Office RnD</Button>
             </div>
           </Form>
         </div>

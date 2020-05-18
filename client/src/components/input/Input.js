@@ -46,6 +46,7 @@ CustomInput.defaultProps = {
   maxLength: 10000000000000000,
   type: 'input',
   value: '',
+  defaultValue: '',
   onChange: () => {},
   onPressEnter: () => {},
   setValue: () => {},

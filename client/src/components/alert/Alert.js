@@ -1,13 +1,10 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import { notification } from 'antd';
 
 const CustomAlert = ({ status, message, type }) => {
   let init = 0;
-  useEffect(() => {
-    init += 1;
-  });
   const checkState = () => {
     return init === 1 ? true : false;
   };
