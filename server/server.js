@@ -21,7 +21,6 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-console.log('got here', process.env.REACT_APP_ENV);
 
 app.use('/api/v1/redirect', redirect);
 app.use('/api/v1/transaction', transaction);

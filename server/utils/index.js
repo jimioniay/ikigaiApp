@@ -3,6 +3,7 @@ import { ErrorHandler, handleError } from './errorHandler';
 import { SERVER_EXCEPTION } from './constants';
 import generateSignature from './generateSignature';
 import { generateToken, decodeToken } from './auth';
+import getBaseURL from './getBaseURL';
 import rave from './rave';
 
 module.exports = {
@@ -14,4 +15,5 @@ module.exports = {
   generateToken,
   decodeToken,
   rave,
+  getBaseURL,
 };

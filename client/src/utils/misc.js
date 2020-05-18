@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+
 const getQueryParams = async path => {
   let response = {
     transactionId: '',
@@ -64,4 +65,14 @@ const decodeToken = token => {
   }
 };
 
-export { getQueryParams, decodeToken };
+const getBaseURL = type => {
+  if (process.env.NODE_ENV === 'production') {
+    return process.env.SERVER_BASE_URL;
+  } else {
+    return type === 'client'
+      ? 'http://localhost:3000'
+      : 'http://localhost:4009';
+  }
+};
+
+export default { getQueryParams, decodeToken, getBaseURL };

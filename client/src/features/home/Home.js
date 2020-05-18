@@ -6,14 +6,13 @@ import Title from '../../components/title';
 import Input from '../../components/input';
 import Button from '../../components/button';
 
+import utils from '../../utils';
+
 import { level, text } from './title.json';
 import InputFieldData from './input.json';
 import input from './input.json';
 
 const Home = ({ history: { push } }) => {
-  console.log('react counter ---> ', process.env.REACT_APP_REDIRECT_COUNTER);
-  console.log('node counter ---> ', process.env.REDIRECT_COUNTER);
-
   const [form, setForm] = useState({
     tId: '',
     ref: '',
@@ -41,7 +40,6 @@ const Home = ({ history: { push } }) => {
       [name]: type === 'checkbox' ? checked : value,
     });
   };
-  console.log(form);
   const displayInputFields = () => {
     return InputFieldData.map(field => (
       <Fragment key={field.id}>
@@ -78,8 +76,10 @@ const Home = ({ history: { push } }) => {
   const handleClick = async e => {
     const { tId, ref, amount, signature } = form;
     e.preventDefault();
+    const { getBaseURL } = utils;
+    let baseURL = getBaseURL('client');
     push(
-      `/pay?transactionId=${tId}&reference=${ref}&amount=${amount}&signature=${signature}&redirectUrl=${process.env.REACT_APP_CLIENT_BASE_URL}/officeRnD`,
+      `/pay?transactionId=${tId}&reference=${ref}&amount=${amount}&signature=${signature}&redirectUrl=${baseURL}/officeRnD`,
     );
   };
 

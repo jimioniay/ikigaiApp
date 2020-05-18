@@ -1,4 +1,5 @@
 import axios from './axios';
+import misc from './misc';
 
 const initiatePayment = async ({
   amount,
@@ -26,13 +27,14 @@ const initiatePayment = async ({
 };
 
 const generatePaymentURL = async (data, form) => {
+  const { getBaseURL } = misc;
   const apiData = {
     transactionId: data.transactionId,
     reference: data.reference,
     amount: data.amount,
     redirectUrl: data.redirectUrl,
     customer_email: form.email,
-    redirect_url: `${process.env.SERVER_BASE_URL}/api/v1/redirect/flutterwave`,
+    redirect_url: `${getBaseURL('server')}/api/v1/redirect/flutterwave`,
     custom_title: 'Ikigai Payment',
     customer_firstname: form.firstName,
     customer_lastname: form.lastName,

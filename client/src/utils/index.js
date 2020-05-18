@@ -1,4 +1,5 @@
 import api from './api';
-import { getQueryParams, decodeToken } from './util';
+import Misc from './misc';
 import AuthService from './authService';
-export default { api, getQueryParams, decodeToken, AuthService };
+const { getQueryParams, decodeToken, getBaseURL } = Misc;
+export default { api, getQueryParams, decodeToken, AuthService, getBaseURL };

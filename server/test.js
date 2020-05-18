@@ -12,7 +12,6 @@ const test = async () => {
       match = regex.exec(url);
       values.push({ key: match[1], value: match[2] });
     }
-    console.log(values);
     let test = {};
     for (let i = 0; i < values.length; i++) {
       test = {
