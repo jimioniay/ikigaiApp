@@ -74,7 +74,7 @@
   background: white !important;
 }
 
-#root > section > header > span.float-left > img {
+#root > section > header > a > span.float-left > img {
   width: 50px;
   height: auto;
   margin-top: -7px;

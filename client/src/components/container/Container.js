@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Layout from '../layout';
 import Header from '../header';
@@ -13,12 +14,14 @@ const Container = ({ hederText, children, spinner, alert }) => {
     <Layout>
       <Alert {...alert} />
       <Header>
-        <span className="float-left">
-          <img
-            src="https://ikigai.co.ke/static/assan/custom/img/logo.93882014883e.png"
-            alt="IKIGAI"
-          />
-        </span>
+        <Link to="/">
+          <span className="float-left">
+            <img
+              src="https://ikigai.co.ke/static/assan/custom/img/logo.93882014883e.png"
+              alt="IKIGAI"
+            />
+          </span>
+        </Link>
         <span className="float-right">
           <Spinner status={spinner} />
         </span>
