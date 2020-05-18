@@ -3,8 +3,8 @@ import AuthServices from './authService';
 import misc from '../utils/misc';
 
 const { getBaseURL } = misc;
-const base = getBaseURL('server');
-const baseURL = `${base}/api/v1`;
+const b = getBaseURL('server');
+const baseURL = `${b}/api/v1`;
 const instance = axios.create({
   baseURL,
   headers: {
