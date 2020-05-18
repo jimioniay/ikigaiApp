@@ -1,7 +1,7 @@
 import axios from 'axios';
 import AuthServices from './authService';
 
-const baseURL = `${window.location.origin}/api/v1`;
+const baseURL = `${PROCESS.ENV.SERVER_BASE_URL}/api/v1`;
 const instance = axios.create({
   baseURL,
   headers: {

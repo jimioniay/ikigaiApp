@@ -79,7 +79,7 @@ const Home = ({ history: { push } }) => {
     const { tId, ref, amount, signature } = form;
     e.preventDefault();
     push(
-      `/pay?transactionId=${tId}&reference=${ref}&amount=${amount}&signature=${signature}&redirectUrl=http://localhost:3000/officeRnD`,
+      `/pay?transactionId=${tId}&reference=${ref}&amount=${amount}&signature=${signature}&redirectUrl=${process.env.REACT_APP_CLIENT_BASE_URL}/officeRnD`,
     );
   };
 
