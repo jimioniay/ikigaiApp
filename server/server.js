@@ -13,6 +13,7 @@ import {
 } from './utils';
 
 import { ERROR_ROUTE } from './utils/constants';
+import { getBaseURL } from './utils';
 import connection from './database';
 
 import 'dotenv/config';
@@ -51,7 +52,14 @@ connection
 
 try {
   app.listen(PORT, () => console.log(`Server started on port ${PORT} ...`));
-  console.log('Enviromental Variables --> ', process.env);
+  console.log(
+    'Enviromental Variables --> ',
+    process.env.NODE_ENV,
+    'client: ',
+    getBaseURL('client'),
+    'server: ',
+    getBaseURL('server'),
+  );
 } catch (error) {
   ErrorLogger(SERVER_EXCEPTION, error);
 }
