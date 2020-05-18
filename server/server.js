@@ -28,6 +28,7 @@ app.get('/error', () => {
   throw new ErrorHandler(400, ERROR_ROUTE, 'Invalid Route', ERROR_ROUTE);
 });
 if (process.env.NODE_ENV === 'production') {
+  console.log('got here');
   app.use(express.static('client/build'));
 
   app.get('*', (req, res) => {
