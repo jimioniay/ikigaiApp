@@ -1,10 +1,11 @@
 const getBaseURL = type => {
+  let url = '';
   if (process.env.NODE_ENV === 'production') {
-    return process.env.SERVER_BASE_URL;
+    url = process.env.SERVER_BASE_URL;
   } else {
-    return type === 'client'
-      ? 'http://localhost:3000'
-      : 'http://localhost:4009';
+    url = type === 'client' ? 'http://localhost:3000' : 'http://localhost:4009';
   }
+  console.log('url --> ', url);
+  return url;
 };
 module.exports = getBaseURL;

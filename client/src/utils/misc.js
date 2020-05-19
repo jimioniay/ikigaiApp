@@ -66,13 +66,14 @@ const decodeToken = token => {
 };
 
 const getBaseURL = type => {
+  let url = '';
   if (process.env.NODE_ENV === 'production') {
-    return process.env.SERVER_BASE_URL;
+    url = process.env.REACT_APP_SERVER_BASE_URL;
   } else {
-    return type === 'client'
-      ? 'http://localhost:3000'
-      : 'http://localhost:4009';
+    url = type === 'client' ? 'http://localhost:3000' : 'http://localhost:4009';
   }
+  console.log('url --> ', url);
+  return url;
 };
 
 export default { getQueryParams, decodeToken, getBaseURL };

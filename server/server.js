@@ -52,14 +52,7 @@ connection
 
 try {
   app.listen(PORT, () => console.log(`Server started on port ${PORT} ...`));
-  console.log(
-    'Enviromental Variables --> ',
-    process.env.NODE_ENV,
-    'client: ',
-    getBaseURL('client'),
-    'server: ',
-    getBaseURL('server'),
-  );
+  console.log('Environmental Variables --> ', process.env);
 } catch (error) {
   ErrorLogger(SERVER_EXCEPTION, error);
 }
