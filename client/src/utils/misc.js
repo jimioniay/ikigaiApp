@@ -21,7 +21,13 @@ const getQueryParams = async path => {
         [values[i].key]: values[i].value,
       };
     }
-    return response;
+    let finalResponse = {
+      transactionId: response.tId,
+      reference: response.ref,
+      amount: response.amount,
+      redirectUrl: response.redirectUrl,
+    };
+    return finalResponse;
   } catch (error) {
     return {
       status: false,

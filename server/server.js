@@ -13,7 +13,6 @@ import {
 } from './utils';
 
 import { ERROR_ROUTE } from './utils/constants';
-import { getBaseURL } from './utils';
 import connection from './database';
 import path from 'path';
 

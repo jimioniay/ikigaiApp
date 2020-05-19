@@ -19,8 +19,7 @@ const test = async () => {
         [values[i].key]: values[i].value,
       };
     }
-  } catch (error) {
-  }
+  } catch (error) {}
 
   // try {
   //   const response = await axios({
@@ -73,3 +72,5 @@ const test = async () => {
 };
 
 console.log('response returned ===> ', test());
+
+// https://ikigai-demo-app.herokuapp.com/api/v1/transaction/initiate?transactionId=&reference=&signature=45f99b3c877d3b87c8dceea46300cc9b03ac9971b8de2c8b3b825def45f04320&amount=10000&redirectUrl=https:%2F%2Fikigai-integration-testing-account.officernd.com%2Fgateway%2F5ec1b24c0a113800a5d2049e%2Fpay%2F5ec1fe47ad328e00940bb952%2Freturn
