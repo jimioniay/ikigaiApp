@@ -31,11 +31,12 @@ const officeRnDRedirect = async (
             : `${name}||${message}`;
         throw new ErrorHandler(401, OFFICE_REDIRECT, errorMessage);
       } else {
-        let message = `${status}|${transactionId}`;
+        let adaptStatus = status.includes('success') ? 'success' : status;
+        let message = `${adaptStatus}|${transactionId}`;
         const signature = generateSignature(message);
         const url =
-          responseMessage === null
-            ? `${officeRedirectUrl}?status=${status}&transactionId=${transactionId}&signature=${signature}`
+          adaptStatus === 'success'
+            ? `${officeRedirectUrl}?status=success&transactionId=${transactionId}&signature=${signature}`
             : `${officeRedirectUrl}?status=${status}&transactionId=${transactionId}&error=${responseMessage}&signature=${signature}`;
         res.json({
           status: true,

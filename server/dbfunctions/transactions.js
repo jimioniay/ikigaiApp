@@ -83,7 +83,7 @@ const updateATransaction = async (
     authmodel,
     authurl,
     paymenttype,
-    card = { card_tokens: [{ embedtoken: '' }] },
+    card,
   },
 ) => {
   try {
@@ -95,7 +95,8 @@ const updateATransaction = async (
         authModel: authmodel,
         authUrl: authurl,
         paymentType: paymenttype,
-        embedToken: card.card_tokens[0].embedToken,
+        embedToken:
+          card.card_tokens.length > 0 ? card.card_tokens[0].embedToken : '',
         responseCode: vbvcode === 'N/A' ? chargecode : vbvcode,
         responseMessage: vbvmessage === 'N/A' ? chargemessage : vbvmessage,
         source: 'verify',

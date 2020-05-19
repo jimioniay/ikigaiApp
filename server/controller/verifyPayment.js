@@ -34,7 +34,7 @@ const verifyPayment = async ({ body }, res, next) => {
           dataValues.id,
           verifyResponse.data.data,
         );
-        delete data.embedToken;
+        data.embedToken && delete data.embedToken;
         res.json({
           status: true,
           message: 'Verified Successfully',

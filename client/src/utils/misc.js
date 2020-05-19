@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 const getQueryParams = async path => {
-  let response = {
+  let finalResponse = {
     tId: '',
     ref: '',
     amount: 0,
@@ -16,13 +16,14 @@ const getQueryParams = async path => {
       match = regex.exec(path);
       values.push({ key: match[1], value: match[2] });
     }
+    let response;
     for (let i = 0; i < values.length; i++) {
       response = {
         ...response,
         [values[i].key]: values[i].value,
       };
     }
-    let finalResponse = {
+    finalResponse = {
       transactionId: response.tId,
       reference: response.ref,
       amount: response.amount,
@@ -80,7 +81,6 @@ const getBaseURL = type => {
   } else {
     url = type === 'client' ? 'http://localhost:3000' : 'http://localhost:4009';
   }
-  console.log('url --> ', url);
   return url;
 };
 

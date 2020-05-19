@@ -10,7 +10,6 @@ const instance = axios.create({
     'Cache-Control': 'no-cache',
   },
 });
-
 instance.defaults.headers.common.Authorization = AuthServices.getToken();
 
 export default instance;

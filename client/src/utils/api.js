@@ -1,5 +1,6 @@
 import axios from './axios';
 import misc from './misc';
+import AuthServices from './authService';
 
 const initiatePayment = async ({
   amount,
@@ -12,6 +13,9 @@ const initiatePayment = async ({
     const response = await axios({
       method: 'GET',
       url: '/transaction/initiate',
+      headers: {
+        Authorization: AuthServices.getToken(),
+      },
       params: {
         transactionId,
         reference,
@@ -45,6 +49,9 @@ const generatePaymentURL = async (data, form) => {
     const response = await axios({
       method: 'POST',
       url: '/transaction/pay',
+      headers: {
+        Authorization: AuthServices.getToken(),
+      },
       data: apiData,
     });
     return response.data.data.link;
