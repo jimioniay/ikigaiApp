@@ -47,7 +47,7 @@ const officeRnDRedirect = async (
         });
       }
     } else {
-      throw new ErrorHandler(500, OFFICE_REDIRECT, 'No transaction found');
+      throw new ErrorHandler(404, OFFICE_REDIRECT, 'No transaction found');
     }
   } catch (error) {
     res.status(error.statusCode).json({

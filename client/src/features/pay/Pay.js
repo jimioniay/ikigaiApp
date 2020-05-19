@@ -61,7 +61,7 @@ const Pay = ({ history: { push }, location: { search } }) => {
   };
 
   const submitQueryParams = async data => {
-    setSpinner(false);
+    setSpinner(true);
     try {
       const response = await initiatePayment(data);
       const { status, message, data: tokenData } = decodeToken(response.token);

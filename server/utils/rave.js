@@ -15,7 +15,7 @@ const ravePay = async data => {
     });
   } catch (error) {
     throw new ErrorHandler(
-      500,
+      400,
       RAVE_PAY_FAIL,
       error.response.data.message || error,
       error.response.data || error,
@@ -35,7 +35,7 @@ const raveVerify = async data => {
     });
   } catch (error) {
     throw new ErrorHandler(
-      500,
+      400,
       RAVE_VERIFY_FAIL,
       error.response.data.message || error.response.statusText,
       error.response.data || error,
