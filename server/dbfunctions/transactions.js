@@ -1,4 +1,4 @@
-import { ErrorLogger } from '../utils';
+import { ErrorLogger, getCardToken } from '../utils';
 import {
   DB_LOG_FAIL,
   DB_UPDATE_SUCCESS,
@@ -83,7 +83,7 @@ const updateATransaction = async (
     authmodel,
     authurl,
     paymenttype,
-    card,
+    card = '',
   },
 ) => {
   try {
@@ -95,8 +95,7 @@ const updateATransaction = async (
         authModel: authmodel,
         authUrl: authurl,
         paymentType: paymenttype,
-        embedToken:
-          card.card_tokens.length > 0 ? card.card_tokens[0].embedToken : '',
+        embedToken: getCardToken(card),
         responseCode: vbvcode === 'N/A' ? chargecode : vbvcode,
         responseMessage: vbvmessage === 'N/A' ? chargemessage : vbvmessage,
         source: 'verify',
