@@ -80,7 +80,7 @@ const Home = ({ history: { push } }) => {
     const { getBaseURL } = utils;
     let baseURL = getBaseURL('client');
     push(
-      `/pay?transactionId=${tId}&reference=${ref}&amount=${amount}&signature=${signature}&redirectUrl=${baseURL}/officeRnD`,
+      `/pay?tId=${tId}&ref=${ref}&amount=${amount}&signature=${signature}&redirectUrl=${baseURL}/officeRnD`,
     );
   };
 

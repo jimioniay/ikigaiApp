@@ -2,10 +2,11 @@ import jwt from 'jsonwebtoken';
 
 const getQueryParams = async path => {
   let response = {
-    transactionId: '',
-    reference: '',
+    tId: '',
+    ref: '',
     amount: 0,
     redirectUrl: '',
+    signature: '',
   };
   try {
     let regex = /[?&]([^=#]+)=([^&#]*)/g,
@@ -26,6 +27,7 @@ const getQueryParams = async path => {
       reference: response.ref,
       amount: response.amount,
       redirectUrl: response.redirectUrl,
+      signature: response.signature,
     };
     return finalResponse;
   } catch (error) {
