@@ -31,7 +31,8 @@ const officeRnDRedirect = async (
             : `${name}||${message}`;
         throw new ErrorHandler(401, OFFICE_REDIRECT, errorMessage);
       } else {
-        let adaptStatus = status.includes('success') ? 'success' : status;
+        let adaptStatus =
+          status === 'successful' || 'success' ? 'success' : status;
         let message = `${adaptStatus}|${transactionId}`;
         const signature = generateSignature(message);
         const url =
