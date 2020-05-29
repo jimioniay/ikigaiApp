@@ -57,7 +57,7 @@ try {
   app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}...`);
     (async () => {
-      console.log(await public_ip.v4());
+      console.log('Public IP: ', await public_ip.v4());
     })();
   });
   console.log('Environmental Variables --> ', process.env);
