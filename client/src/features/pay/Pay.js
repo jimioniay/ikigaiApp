@@ -38,6 +38,7 @@ const Pay = ({ history: { push }, location: { search } }) => {
     email: '',
     productName: '',
     amount: '',
+    mobile: '',
   });
   useEffect(() => {
     search ? processRequest() : push('/');
@@ -103,6 +104,7 @@ const Pay = ({ history: { push }, location: { search } }) => {
             name={field.name}
             rules={field.rules}
             size={field.size}
+            required={field.required}
             className={field.className}
             placeholder={field.placeholder}
             type={field.type}

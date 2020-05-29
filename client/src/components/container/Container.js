@@ -27,7 +27,17 @@ const Container = ({ hederText, children, spinner, alert }) => {
         </span>
         <div className="flex justify-content-center">{hederText}</div>
       </Header>
-      <Content className="content">{children}</Content>
+      <Content className="content">
+        <div className="flex justify-content-center align-items-center flex-column">
+          <div className="padding">
+            <img
+              src="https://ikigai.co.ke/static/assan/custom/img/logo.93882014883e.png"
+              alt="IKIGAI"
+            />
+          </div>
+          {children}
+        </div>
+      </Content>
       <Footer>
         <span className="flex justify-content-center">Ikigai @ 2020</span>
       </Footer>

@@ -17,6 +17,7 @@ const CustomInput = ({
   onPressEnter,
   allowClear,
   setValue,
+  required,
 }) => (
   <div className={className}>
     <Input
@@ -34,6 +35,7 @@ const CustomInput = ({
       prefix={''}
       disabled={disabled}
       setValue={setValue}
+      required={required}
     />
   </div>
 );

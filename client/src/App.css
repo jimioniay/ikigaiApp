@@ -67,11 +67,21 @@
 .content {
   padding: 40px 10px;
   min-height: 800px;
-  display: flex;
   justify-content: center;
+}
+
+.padding {
+  padding: 5px;
+  margin-bottom: 5px;
 }
 .ant-layout-header {
   background: white !important;
+}
+.align-item-center {
+  align-items: center;
+}
+.flex-column {
+  flex-direction: column;
 }
 
 #root > section > header > a > span.float-left > img {

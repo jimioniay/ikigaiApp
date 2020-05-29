@@ -42,6 +42,7 @@ const generatePaymentURL = async (data, form) => {
     custom_title: 'Ikigai Payment',
     customer_firstname: form.firstName,
     customer_lastname: form.lastName,
+    customer_phone: form.mobile,
     custom_description: 'Ikigai Membership Payment',
     ip: data.ip,
   };
