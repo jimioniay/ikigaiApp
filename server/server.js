@@ -4,15 +4,17 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import transaction from './routes/transaction';
+import public_ip from 'public-ip';
 import redirect from './routes/redirect';
 import {
   ErrorHandler,
   SERVER_EXCEPTION,
   handleError,
   ErrorLogger,
+  sendEmail,
 } from './utils';
 
-import { ERROR_ROUTE } from './utils/constants';
+import { ERROR_ROUTE, EMAIL_ERROR_DB_CONNECT } from './utils/constants';
 import connection from './database';
 import path from 'path';
 
@@ -46,13 +48,20 @@ connection
   .then(() => {
     console.log('Database connection has been established successfully.');
   })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
+  .catch(error => {
+    console.error('Unable to connect to the database:', error);
+    sendEmail({ domain: EMAIL_ERROR_DB_CONNECT, additionalInfo: error });
   });
 
 try {
-  app.listen(PORT, () => console.log(`Server started on port ${PORT} ...`));
+  app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}...`);
+    (async () => {
+      console.log(await public_ip.v4());
+    })();
+  });
   console.log('Environmental Variables --> ', process.env);
 } catch (error) {
   ErrorLogger(SERVER_EXCEPTION, error);
+  sendEmail({ domain: SERVER_EXCEPTION, additionalInfo: error });
 }
