@@ -81,6 +81,7 @@ const getBaseURL = type => {
   } else {
     url = type === 'client' ? 'http://localhost:3000' : 'http://localhost:4009';
   }
+  console.log('url --> ', url);
   return url;
 };
 
