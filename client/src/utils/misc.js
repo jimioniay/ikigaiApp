@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import urldecode from 'urldecode';
 
 const getQueryParams = async path => {
   let finalResponse = {
@@ -20,7 +21,7 @@ const getQueryParams = async path => {
     for (let i = 0; i < values.length; i++) {
       response = {
         ...response,
-        [values[i].key]: values[i].value,
+        [values[i].key]: urldecode(values[i].value),
       };
     }
     finalResponse = {
